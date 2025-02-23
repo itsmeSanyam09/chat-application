@@ -22,7 +22,7 @@ dotenv.config();
 
 const PORT = process.env.PORT;
 const __dirname = path.resolve();
-app.use(cors({ origin: 'https://chat-application-s54z.onrender.com/', credentials: true }));
+app.use(cors({ origin: 'https://chat-application-fron-git-7ae200-sanyam-jains-projects-f58e30da.vercel.app//', credentials: true }));
 app.use(bodyParser.json({ limit: '50mb' })); 
 app.use(bodyParser.urlencoded({ limit: '50mb', extended: true }));
 
