@@ -3,7 +3,7 @@ import toast from 'react-hot-toast';
 import {axiosInstance} from '../lib/axios.js';
 import { useAuthStore } from './useAuthStore.js';
 
-const BASE_URL = import.meta.env.MODE === "development" ? "https://chat-application-backend-nine.vercel.app/api" :"/api";
+const BASE_URL = import.meta.env.MODE === "development" ? "https://chat-application-backend-nine.vercel.app/api" :"https://chat-application-backend-nine.vercel.app/api";
 
 export const useChatStore = create((set,get)=>({
     messages: [],
