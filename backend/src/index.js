@@ -12,7 +12,7 @@ import { connectDB } from "./lib/db.js";
 
 import authRoutes from "./routes/auth.routes.js";
 import messageRoutes from "./routes/message.routes.js";
-import { io,app, server } from "./lib/socket.js";
+import { app, server } from "./lib/socket.js";
 
 
 
@@ -38,10 +38,10 @@ app.use("/api/messages", messageRoutes);
 if(process.env.NODE_ENV === "production"){
   app.use(express.static(path.join(__dirname, "../frontend/dist")));
   
-  app.length("*", (req, res) => {
+  app.get("*", (req, res) => {
     res.sendFile(path.join(__dirname, "../frontend", "dist","index.html"));
     
-  })
+  });
 
 }
 

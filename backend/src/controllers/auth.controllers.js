@@ -1,6 +1,7 @@
 import User from "../models/user.model.js";
 
 import bcrypt from "bcryptjs";
+import { connectDB } from "../lib/db.js";
 
 import { generateToken } from "../lib/utils.js";
 import cloudinary from "../lib/cloudinary.js";
@@ -8,6 +9,8 @@ import cloudinary from "../lib/cloudinary.js";
 export const signup = async(req,res) => {
   const{ fullName, email, password } = req.body;
   try {
+    console.log("signup called");
+    console.log("req.body",req.body);
     if(!fullName || !email || !password){
       res.status(400).json({message:"All fields are required"});
     }
@@ -22,12 +25,14 @@ export const signup = async(req,res) => {
 
     const salt = await bcrypt.genSalt(10);
     const hashedPassword = await bcrypt.hash(password,salt);
+    await connectDB();
 
     const newUser = new User({
       fullName,
       email,
       password:hashedPassword
     });
+    console.log("new user created",newUser);
 
     if(newUser){
       generateToken(newUser._id,res);
@@ -43,6 +48,7 @@ export const signup = async(req,res) => {
 
     }
     else{
+      console.log("error");
       res.status(400).json({message:"Invalid user data"});
     }
 
@@ -84,7 +90,7 @@ export const logout = (req, res) => {
       
     } catch (error) {
       console.log("error in logout",error.message);
-      res,status(500).json({message:"Internal server error"});
+      res.status(500).json({message:"Internal server error"});
       
     }
 };

@@ -3,6 +3,8 @@ import toast from 'react-hot-toast';
 import {axiosInstance} from '../lib/axios.js';
 import { useAuthStore } from './useAuthStore.js';
 
+const BASE_URL = import.meta.env.MODE === "development" ? "http://localhost:5001/api" :"/api";
+
 export const useChatStore = create((set,get)=>({
     messages: [],
     users:[],
@@ -13,7 +15,7 @@ export const useChatStore = create((set,get)=>({
     getUsers: async() => {
         set({isUsersLoading: true});
         try {
-            const res = await axiosInstance.get("/messages/users");
+            const res = await axiosInstance.get(`${BASE_URL}/messages/users`);
             set({users: res.data});
 
             
@@ -27,7 +29,7 @@ export const useChatStore = create((set,get)=>({
     getMessages: async(userId) => {
         set({isMessagesLoading: true});
         try {
-            const res = await axiosInstance.get(`/messages/${userId}`);
+            const res = await axiosInstance.get(`${BASE_URL}/messages/${userId}`);
             set({messages: res.data});
             
         } catch (error) {
@@ -41,7 +43,7 @@ export const useChatStore = create((set,get)=>({
     sendMessage: async (messageData)=>{
         const {selectedUser,messages} =get();
         try {
-            const res = await axiosInstance.post(`/messages/sent/${selectedUser._id}`,messageData);
+            const res = await axiosInstance.post(`${BASE_URL}/messages/sent/${selectedUser._id}`,messageData);
             set({messages:[...messages,res.data]});
             
         } catch (error) {
@@ -64,6 +66,7 @@ export const useChatStore = create((set,get)=>({
             });
 
         })
+        console.log("subscribing to new message");
 
     },
     unsubscribeFromMessages: ()=>{
