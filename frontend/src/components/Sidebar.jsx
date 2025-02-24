@@ -46,7 +46,7 @@ const Sidebar = () => {
                 `}
             >
                 <div className='relative x-auto lg:mx-0'>
-                    <img src={user.profilePic||"/src/avatar.png"} alt={user.name} className='size-12 object-cover rounded-full scale-x-100 overflow-hidden'/>
+                    <img src={user.profilePic||"https://www.google.com/url?sa=i&url=https%3A%2F%2Ficonscout.com%2Ficons%2Favatar&psig=AOvVaw32Y1poZeburjuoMX6ztm2y&ust=1740493546034000&source=images&cd=vfe&opi=89978449&ved=0CBYQjRxqFwoTCLD51_PB3IsDFQAAAAAdAAAAABAE"} alt={user.name} className='size-12 object-cover rounded-full scale-x-100 overflow-hidden'/>
                     {onlineUsers.includes(user._id) && (
                         <span className='absolute bottom-0 right-0 size-3 bg-green-500 rounded-full ring-2 ring-zinc-900'/>
                     )}
