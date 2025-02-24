@@ -43,7 +43,7 @@ const ChatConatiner = () => {
             ref={messageEndRef}>
               <div className='chat-image avatar'>
                 <div className="size-10 rounded-full border">
-                  <img src={message.senderId ===authUser._id ?authUser.profilePic||"/src/avatar.png":selectedUser.profilePic||"/src/avatar.png"} alt="profile pic" />
+                  <img src={message.senderId ===authUser._id ?authUser.profilePic||"https://www.google.com/url?sa=i&url=https%3A%2F%2Ficonscout.com%2Ficons%2Favatar&psig=AOvVaw32Y1poZeburjuoMX6ztm2y&ust=1740493546034000&source=images&cd=vfe&opi=89978449&ved=0CBYQjRxqFwoTCLD51_PB3IsDFQAAAAAdAAAAABAE":selectedUser.profilePic||"https://www.google.com/url?sa=i&url=https%3A%2F%2Ficonscout.com%2Ficons%2Favatar&psig=AOvVaw32Y1poZeburjuoMX6ztm2y&ust=1740493546034000&source=images&cd=vfe&opi=89978449&ved=0CBYQjRxqFwoTCLD51_PB3IsDFQAAAAAdAAAAABAE"} alt="profile pic" />
 
                 </div>
 
