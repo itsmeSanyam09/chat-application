@@ -32,7 +32,7 @@ const ProfilePage = () => {
           <div className="flex flex-col items-center gap-3">
             <div className="relative">
               <img
-                src={selectedImg || authUser.profilePic || "./src/avatar.png"}
+                src={selectedImg || authUser.profilePic || "https://www.google.com/url?sa=i&url=https%3A%2F%2Ficonscout.com%2Ficons%2Favatar&psig=AOvVaw32Y1poZeburjuoMX6ztm2y&ust=1740493546034000&source=images&cd=vfe&opi=89978449&ved=0CBYQjRxqFwoTCLD51_PB3IsDFQAAAAAdAAAAABAE"}
                 alt="Profile"
                 className="size-32 rounded-full object-cover border-4 "
               />
