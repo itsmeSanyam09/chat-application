@@ -7,7 +7,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
     cors: {
-        origin: ["https://chat-application-fron-git-7ae200-sanyam-jains-projects-f58e30da.vercel.app"],
+        origin: ["http://localhost:5173"],
         methods: ["GET", "POST"],
         credentials: true,
     },
