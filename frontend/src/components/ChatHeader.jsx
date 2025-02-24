@@ -13,7 +13,7 @@ const ChatHeader = () => {
           {/* Avatar */}
           <div className="avatar">
             <div className="size-10 scale-110 rounded-full relative">
-              <img src={selectedUser.profilePic || "/src/avatar.png"} alt={selectedUser.fullName} />
+              <img src={selectedUser.profilePic || "https://www.google.com/url?sa=i&url=https%3A%2F%2Ficonscout.com%2Ficons%2Favatar&psig=AOvVaw32Y1poZeburjuoMX6ztm2y&ust=1740493546034000&source=images&cd=vfe&opi=89978449&ved=0CBYQjRxqFwoTCLD51_PB3IsDFQAAAAAdAAAAABAE"} alt={selectedUser.fullName} />
             </div>
           </div>
 
