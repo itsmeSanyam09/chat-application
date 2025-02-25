@@ -102,7 +102,7 @@ export const useAuthStore = create((set,get)=>({
     connectSocket:() =>{
         const {authUser} = get();
         if(!authUser ||get().socket?.connected) return;
-        const socket = io("",{
+        const socket = io("https://chat-application-full-stack-backend.vercel.app",{
             query:{
                 userId:authUser._id
             }
