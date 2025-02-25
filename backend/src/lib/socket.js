@@ -7,7 +7,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
     cors: {
-        origin: ["https://chat-application-s54z.onrender.com"],
+        origin: ["https://chat-application-full-stack-chat-app.vercel.app"],
         methods: ["GET", "POST"],
         credentials: true,
     },
